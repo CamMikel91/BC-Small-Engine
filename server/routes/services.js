@@ -26,8 +26,13 @@ router.post("/", async (req, res) => {
 
 // Get all services
 router.get("/", async (req, res) => {
-  const services = await Service.find().sort("machineType");
-  res.send(services);
+  try {
+    const services = await Service.find().sort("machineType");
+    res.send(services);
+  } catch (ex) {
+    console.log(ex);
+    res.status(500).send("Something went wrong...");
+  }
 });
 
 // Get a single service

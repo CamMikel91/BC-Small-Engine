@@ -1,0 +1,118 @@
+.banner {
+  background-image: url("/public/images/mower_03.jpg");
+  position: relative;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  padding: 25px;
+}
+
+#bannerImg {
+  height: 30%;
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+#bannerMotto {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 45px;
+  font-style: italic;
+}
+
+#bannerSub {
+  color: white;
+  text-align: center;
+}
+
+#servicesContainer {
+  background-image: url("/public/images/brushedSteel.png");
+}
+
+.card {
+  padding: 20px;
+  background-color: rgb(241, 241, 241);
+  border-radius: 10px;
+  box-shadow: 3px 2px 5px 2px #888888;
+  max-width: 400px;
+  margin: auto;
+}
+
+#partsIcon {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: auto;
+}
+
+.card-title {
+  font-size: 30px;
+  color: orange;
+  font-weight: bold;
+  text-align: center;
+}
+
+#servicesIcon {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: auto;
+}
+
+#servicesDropdown {
+  background-color: rgb(1, 150, 150);
+  margin-top: 15px;
+}
+
+#servicesDropdown:hover {
+  background-color: turquoise;
+}
+
+footer {
+  background-image: linear-gradient(#ff8c00, #ff4500);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  margin-left: 10px;
+  font-size: 15px;
+  color: turquoise;
+  text-decoration: none;
+}
+
+.footerHeading {
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Media Queries */
+
+@media (width >= 1000px) {
+}
+
+@media (max-width: 768px) {
+  #bannerImg {
+    height: 80%;
+    width: 80%;
+  }
+
+  .card {
+    border: none;
+    box-shadow: none;
+    background-color: white;
+    margin-bottom: 15px;
+  }
+
+  #parts {
+    margin-top: 45px;
+  }
+}
