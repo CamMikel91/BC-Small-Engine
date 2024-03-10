@@ -5,6 +5,7 @@ import "./css/nav.css";
 
 class Nav extends Component {
   render() {
+    const { setActiveMachineType } = this.props;
     return (
       <nav className="navbar navbar-expand-md">
         <button
@@ -44,7 +45,9 @@ class Nav extends Component {
                     this.props.machineTypes.map((machineType) => (
                       <li key={machineType}>
                         <Link
-                          to={`/services/${machineType}`}
+                          // to={`/services?machineType=${machineType}`}
+                          to={`/services`}
+                          onClick={() => setActiveMachineType(machineType)}
                           className="dropdown-item"
                         >
                           {machineType}

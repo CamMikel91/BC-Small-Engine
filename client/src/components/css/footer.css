@@ -1,0 +1,33 @@
+footer {
+  background-image: linear-gradient(#ff8c00, #ff4500);
+  color: white;
+  /* text-align: center; */
+  padding: 10px;
+  /* position: relative; */
+  /* bottom: 0; */
+  width: 100%;
+}
+
+footer h5 {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 0px 4px #000000;
+  text-align: center;
+}
+
+footer p {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer a {
+  margin-left: 10px;
+  font-size: 15px;
+  color: turquoise;
+  text-shadow: 2px 0px 4px #000000;
+  text-decoration: underline;
+}

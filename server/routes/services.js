@@ -11,6 +11,7 @@ router.post("/", async (req, res) => {
     machineType: req.body.machineType,
     serviceType: req.body.serviceType,
     serviceDescription: req.body.serviceDescription,
+    serviceIncludes: req.body.serviceIncludes,
     servicePrice: req.body.servicePrice,
     serviceNotes: req.body.serviceNotes,
   });
@@ -53,6 +54,7 @@ router.put("/:id", async (req, res) => {
       machineType: req.body.machineType,
       serviceType: req.body.serviceType,
       serviceDescription: req.body.serviceDescription,
+      serviceIncludes: req.body.serviceIncludes,
       servicePrice: req.body.servicePrice,
       serviceNotes: req.body.serviceNotes,
     },

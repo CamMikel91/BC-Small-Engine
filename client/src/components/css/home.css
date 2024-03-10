@@ -1,13 +1,16 @@
 .banner {
-  background-image: url("/public/images/mower_03.jpg");
   position: relative;
   min-height: 60vh;
   background-size: cover;
   background-position: center;
-  padding: 25px;
+  padding: 10px;
 }
 
-#bannerImg {
+#homeBanner {
+  background-image: url("/public/images/mower_03.jpg");
+}
+
+#homeLogo {
   height: 30%;
   width: 30%;
   display: block;
@@ -21,24 +24,39 @@
   font-weight: bold;
   margin-top: 45px;
   font-style: italic;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 #bannerSub {
-  color: white;
+  color: turquoise;
   text-align: center;
+  text-shadow: 2px 2px 4px #000000;
 }
 
-#servicesContainer {
+#homeContainer {
   background-image: url("/public/images/brushedSteel.png");
 }
 
-.card {
-  padding: 20px;
-  background-color: rgb(241, 241, 241);
-  border-radius: 10px;
+.homeCards {
+  /* padding: 15px; */
+  /* background-color: rgb(241, 241, 241); */
+  /* border-radius: 10px; */
   box-shadow: 3px 2px 5px 2px #888888;
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
+}
+
+.homeCards .card-body button {
+  background-color: rgb(1, 150, 150);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.homeCards .card-body .dropdown {
+  text-align: center;
 }
 
 #partsIcon {
@@ -63,35 +81,15 @@
 }
 
 #servicesDropdown {
-  background-color: rgb(1, 150, 150);
+  /* background-color: rgb(1, 150, 150); */
+  background-color: rgb(53, 189, 175);
+  color: white;
   margin-top: 15px;
+  padding: 15px;
 }
 
 #servicesDropdown:hover {
   background-color: turquoise;
-}
-
-footer {
-  background-image: linear-gradient(#ff8c00, #ff4500);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-footer a {
-  margin-left: 10px;
-  font-size: 15px;
-  color: turquoise;
-  text-decoration: none;
-}
-
-.footerHeading {
-  font-size: 25px;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 /* Media Queries */
@@ -100,7 +98,7 @@ footer a {
 }
 
 @media (max-width: 768px) {
-  #bannerImg {
+  #homeLogo {
     height: 80%;
     width: 80%;
   }

@@ -1,10 +1,8 @@
 nav {
-  /* background-color: darkorange; */
   background-image: linear-gradient(to top, #ff8c00, #ff4500);
   width: 100%;
   text-align: center;
   align-items: center;
-  /* border: 1px solid red; */
 }
 
 ul {
@@ -35,11 +33,6 @@ ul {
   border: 0.5px solid white;
   margin: 0 auto;
 }
-
-/* .dropdown {
-  position: relative;
-  display: inline-block;
-} */
 
 .dropdown-toggle {
   color: white;

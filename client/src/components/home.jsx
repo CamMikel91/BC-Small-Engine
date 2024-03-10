@@ -4,12 +4,12 @@ import "./css/home.css";
 
 class Home extends Component {
   render() {
-    const { machineTypes } = this.props;
+    const { machineTypes, setActiveMachineType } = this.props;
     return (
       <>
-        <section className="banner">
+        <section id="homeBanner" className="banner">
           <div className="container-fluid">
-            <img id="bannerImg" src="/images/bcLogo.png" alt="BC Logo" />
+            <img id="homeLogo" src="/images/bcLogo.png" alt="BC Logo" />
             <h4 id="bannerMotto">We work hard so you don't have to!</h4>
             <p id="bannerSub">
               Proudly serving Davis County for over 24 years!
@@ -17,10 +17,13 @@ class Home extends Component {
           </div>
         </section>
         <section>
-          <div id="servicesContainer" className="container-fluid">
-            <div className="row justify-content-center py-5">
-              <div id="services" className="col-lg-4 col-md-6 col-sm-12">
-                <div className="card h-100">
+          <div
+            id="homeContainer"
+            className="container-fluid  justify-content-around d-flex"
+          >
+            <div className="row py-5">
+              <div id="services" className="col-md-6 col-sm-12">
+                <div className="homeCards card h-100">
                   <img
                     id="servicesIcon"
                     src="/images/servicesIcon_02.png"
@@ -42,7 +45,7 @@ class Home extends Component {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        Services
+                        Find your machine
                       </button>
                       <ul
                         className="dropdown-menu"
@@ -52,7 +55,10 @@ class Home extends Component {
                           machineTypes.map((machineType) => (
                             <li key={machineType}>
                               <Link
-                                to={`/services/${machineType}`}
+                                to={`/services`}
+                                onClick={() =>
+                                  setActiveMachineType(machineType)
+                                }
                                 className="dropdown-item"
                               >
                                 {machineType}
@@ -64,8 +70,8 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <div id="parts" className="col-lg-4 col-md-6 col-sm-12">
-                <div className="card h-100">
+              <div id="parts" className="col-md-6 col-sm-12">
+                <div className="homeCards card h-100">
                   <img
                     id="partsIcon"
                     src="/images/partsIcon_02.png"
