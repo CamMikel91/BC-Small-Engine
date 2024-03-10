@@ -45,7 +45,6 @@ class Nav extends Component {
                     this.props.machineTypes.map((machineType) => (
                       <li key={machineType}>
                         <Link
-                          // to={`/services?machineType=${machineType}`}
                           to={`/services`}
                           onClick={() => setActiveMachineType(machineType)}
                           className="dropdown-item"

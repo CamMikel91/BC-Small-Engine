@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-// import { getServices } from "../services/servicesService";
 import "./css/services.css";
 
 class Services extends Component {
   state = {};
-
-  componentDidMount() {
-    // console.log("Services component mounted");
-  }
 
   render() {
     const {
