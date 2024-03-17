@@ -48,11 +48,15 @@
 }
 
 .servicesHeaderCard .card-header {
+  border-bottom: none;
+}
+
+.servicesHeaderCard .card-header h1 {
   font-size: 40px;
   font-weight: bold;
   text-shadow: 2px 2px 4px orange;
   text-align: center;
-  border-bottom: none;
+  font-style: italic;
 }
 
 .servicesHeaderCard .card-body {
@@ -69,6 +73,7 @@ ul.dropdown-menu.show {
   box-shadow: 3px 2px 5px 2px #888888;
   min-width: 300px;
   max-width: 600px;
+  margin: 30px 15px;
 }
 
 .serviceCardHeader {
@@ -83,7 +88,7 @@ ul.dropdown-menu.show {
 }
 
 .serviceCard .card-body {
-  padding: 15px;
+  padding: 15px 20px;
 }
 
 .serviceIncluded {
@@ -102,13 +107,12 @@ ul.dropdown-menu.show {
   height: 150px;
   justify-content: center;
   border-top: none;
-  margin-top: 15px;
 }
 
 .servicePrice {
   font-size: 30px;
   font-weight: bold;
-  color: turquoise;
+  color: aqua;
   text-align: left;
   margin: 20px 0;
   text-shadow: 1px 1px 4px black;
@@ -140,5 +144,9 @@ ul.dropdown-menu.show {
 
   #servicesContainer {
     padding: 25px 10px;
+  }
+
+  .serviceCard {
+    margin: 15px 0;
   }
 }

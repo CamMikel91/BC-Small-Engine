@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/home";
 import Nav from "./components/nav";
 import Services from "./components/services";
+import About from "./components/about";
 import Footer from "./components/footer";
 import { getServices } from "./services/servicesService";
 import "./app.css";
@@ -69,6 +70,7 @@ class App extends Component {
                 />
               }
             />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
         <Footer />

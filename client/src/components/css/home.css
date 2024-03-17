@@ -8,6 +8,7 @@
 
 #homeBanner {
   background-image: url("/public/images/mower_03.jpg");
+  box-shadow: 2px 2px 5px #383838;
 }
 
 #homeLogo {
@@ -20,7 +21,7 @@
 #bannerMotto {
   color: white;
   text-align: center;
-  font-size: 30px;
+  font-size: 45px;
   font-weight: bold;
   margin-top: 45px;
   font-style: italic;
@@ -38,9 +39,10 @@
 }
 
 .homeCards {
-  box-shadow: 3px 2px 5px 2px #888888;
+  box-shadow: 2px 2px 7px #383838 !important;
   max-width: 600px;
   margin: auto;
+  padding: 10px;
 }
 
 .homeCards .card-body button {
@@ -82,6 +84,7 @@
   color: white;
   margin-top: 15px;
   padding: 15px;
+  box-shadow: 2px 2px 5px #3b3b3b;
 }
 
 #servicesDropdown:hover {

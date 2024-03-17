@@ -81,13 +81,18 @@ class Home extends Component {
                   <div className="card-body">
                     <h5 className="card-title">Parts</h5>
                     <p className="card-text">
-                      We can help you find the parts you're looking for so you
-                      can get up and running again as soon as possible.
+                      We can help you find the parts you need, so you can get up
+                      and running again as soon as possible.
+                    </p>
+                    <p>
+                      Give us a call with your model and serial number, or bring
+                      in your old part and we can help find exactly what you're
+                      looking for.
                     </p>
                     <p className="card-text">
                       We keep a large selection of parts in stock and also have
-                      a "boneyard" if you're looking for parts that might not be
-                      available anymore.
+                      a "boneyard" of machines if you're looking for parts that
+                      might not be available anymore.
                     </p>
                   </div>
                 </div>

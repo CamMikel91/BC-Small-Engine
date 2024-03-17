@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./css/nav.css";
 
+function collapseNav() {
+  const nav = document.querySelector(".navbar-collapse");
+  nav.classList.remove("show");
+}
+
 class Nav extends Component {
   render() {
     const { setActiveMachineType } = this.props;
@@ -22,7 +27,12 @@ class Nav extends Component {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to={"/"} className="nav-link" aria-current="page">
+              <Link
+                to={"/"}
+                className="nav-link"
+                onClick={collapseNav}
+                aria-current="page"
+              >
                 Home
               </Link>
             </li>
@@ -46,7 +56,10 @@ class Nav extends Component {
                       <li key={machineType}>
                         <Link
                           to={`/services`}
-                          onClick={() => setActiveMachineType(machineType)}
+                          onClick={() => {
+                            setActiveMachineType(machineType);
+                            collapseNav();
+                          }}
                           className="dropdown-item"
                         >
                           {machineType}
@@ -57,18 +70,8 @@ class Nav extends Component {
               </div>
             </li>
             <li className="nav-item">
-              <Link to={"/parts"} className="nav-link">
-                Parts
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/about"} className="nav-link">
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/contact"} className="nav-link">
-                Contact
+              <Link to={"/about"} className="nav-link" onClick={collapseNav}>
+                About Us
               </Link>
             </li>
           </ul>

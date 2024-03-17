@@ -29,9 +29,9 @@ ul {
 }
 
 .navbar-toggler {
-  background-color: turquoise;
-  border: 0.5px solid white;
+  background-image: linear-gradient(to top, aqua, rgb(49, 185, 172));
   margin: 0 auto;
+  box-shadow: 2px 2px 4px #000000;
 }
 
 .dropdown-toggle {
