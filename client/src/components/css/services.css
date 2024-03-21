@@ -99,11 +99,7 @@ ul.dropdown-menu.show {
 
 .serviceCard .card-footer {
   padding: 0 15px 15px 15px;
-  background-image: linear-gradient(
-    to top,
-    rgb(255, 192, 109),
-    rgb(255, 151, 32)
-  );
+  background-image: linear-gradient(to top, #ff8c00, #ff4500);
   height: 150px;
   justify-content: center;
   border-top: none;
@@ -112,7 +108,7 @@ ul.dropdown-menu.show {
 .servicePrice {
   font-size: 30px;
   font-weight: bold;
-  color: aqua;
+  color: white;
   text-align: left;
   margin: 20px 0;
   text-shadow: 1px 1px 4px black;

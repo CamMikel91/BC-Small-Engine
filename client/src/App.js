@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Route, Routes } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 import Home from "./components/home";
 import Nav from "./components/nav";
 import Services from "./components/services";
 import About from "./components/about";
+import Login from "./components/login";
+import Logout from "./components/logout";
+import Register from "./components/register";
 import Footer from "./components/footer";
 import { getServices } from "./services/servicesService";
 import "./app.css";
@@ -16,9 +20,18 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    const services = await getServices();
-    const machineTypes = this.getMachineTypes(services);
-    this.setState({ services, machineTypes });
+    try {
+      const jwt = localStorage.getItem("token");
+      const user = jwtDecode(jwt);
+      this.setState({ user });
+    } catch (ex) {}
+    try {
+      const services = await getServices();
+      const machineTypes = this.getMachineTypes(services);
+      this.setState({ services, machineTypes });
+    } catch (ex) {
+      console.log(ex);
+    }
   }
 
   getMachineTypes = (services) => {
@@ -33,16 +46,17 @@ class App extends Component {
   };
 
   render() {
-    const { machineTypes, activeMachineType, services } = this.state;
+    const { machineTypes, activeMachineType, services, user } = this.state;
     return (
       <>
         <header>
           <Nav
             machineTypes={machineTypes}
             setActiveMachineType={this.handleActiveMachineType}
+            user={user}
           />
         </header>
-        <div className="contentArea">
+        <div id="contentArea">
           <Routes>
             <Route
               path="/"
@@ -50,6 +64,7 @@ class App extends Component {
                 <Home
                   machineTypes={machineTypes}
                   setActiveMachineType={this.handleActiveMachineType}
+                  user={user}
                 />
               }
             />
@@ -71,9 +86,14 @@ class App extends Component {
               }
             />
             <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </div>
-        <Footer />
+        <footer>
+          <Footer />
+        </footer>
       </>
     );
   }

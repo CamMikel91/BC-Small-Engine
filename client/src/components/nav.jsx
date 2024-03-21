@@ -10,9 +10,13 @@ function collapseNav() {
 
 class Nav extends Component {
   render() {
-    const { setActiveMachineType } = this.props;
+    const { setActiveMachineType, user } = this.props;
     return (
       <nav className="navbar navbar-expand-md">
+        <Link to={"/"} className="navbar-brand">
+          <img src="./images/whiteCog.png" alt="Cog Logo" />
+          BC Small Engine
+        </Link>
         <button
           className="navbar-toggler me-3"
           type="button"
@@ -74,6 +78,23 @@ class Nav extends Component {
                 About Us
               </Link>
             </li>
+            {!user && (
+              <li className="nav-item">
+                <Link to={"/login"} className="nav-link" onClick={collapseNav}>
+                  Login
+                </Link>
+              </li>
+            )}
+            {user && (
+              <li className="nav-item">
+                <Link to={"/logout"} className="nav-link" onClick={collapseNav}>
+                  Logout{" "}
+                  <span className="badge bg-secondary">
+                    {user.firstName.toUpperCase()}
+                  </span>
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

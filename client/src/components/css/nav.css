@@ -5,10 +5,26 @@ nav {
   align-items: center;
 }
 
+nav img {
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 ul {
   width: 100%;
   margin-right: 10px;
-  justify-content: center;
+  justify-content: end;
   text-align: center;
 }
 
@@ -78,3 +94,5 @@ ul {
   text-decoration: none;
   padding: 5px 10px;
 }
+
+@media;

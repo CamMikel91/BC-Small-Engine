@@ -3,11 +3,3 @@ body {
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-h1 {
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 4px turquoise;
-}

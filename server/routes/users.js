@@ -19,12 +19,6 @@ router.post("/register", async (req, res) => {
     lastName: req.body.lastName.toLowerCase(),
     email: req.body.email.toLowerCase(),
     password: hashed,
-    phone: req.body.phone || "",
-    street: (req.body.street || "").toLowerCase(),
-    unit: (req.body.unit || "").toLowerCase(),
-    city: (req.body.city || "").toLowerCase(),
-    state: (req.body.state || "").toLowerCase(),
-    zip: (req.body.zip || "").toLowerCase(),
   });
 
   try {
@@ -47,25 +41,27 @@ router.post("/register", async (req, res) => {
 
 // Login a user
 router.post("/login", async (req, res) => {
+  // Validate the user input
   const { error } = validateLogin(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) {
+    return res.status(400).send(error.details[0].message);
+  }
 
-  let user = await User.findOne({ email: req.body.email.toLowerCase() });
-  if (!user) return res.status(400).send("Invalid email or password.");
+  // Check if the user is registered
+  let user = await User.findOne({ email: req.body.email });
+  if (!user) {
+    return res.status(400).send("Invalid email or password.");
+  }
 
+  // Check if the password is valid
   const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) return res.status(400).send("Invalid email or password.");
+  if (!validPassword) {
+    return res.status(400).send("Invalid email or password.");
+  }
 
+  // Send the user object back to the client
   const token = user.generateAuthToken();
-  res
-    .header("x-auth-token", token)
-    .header("access-control-expose-headers", "x-auth-token")
-    .send({
-      _id: user._id,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-    });
+  res.header("x-auth-token", token).send(token);
 });
 
 // Update a user
@@ -84,12 +80,6 @@ router.put("/:id", async (req, res) => {
         lastName: req.body.lastName.toLowerCase(),
         email: req.body.email.toLowerCase(),
         password: hashed,
-        phone: req.body.phone || "",
-        street: (req.body.street || "").toLowerCase(),
-        unit: (req.body.unit || "").toLowerCase(),
-        city: (req.body.city || "").toLowerCase(),
-        state: (req.body.state || "").toLowerCase(),
-        zip: (req.body.zip || "").toLowerCase(),
       },
       { new: true }
     );
@@ -102,5 +92,10 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a user
+router.delete("/:id", async (req, res) => {
+  const user = await User.findByIdAndRemove(req.params.id);
+  if (!user) return res.status(404).send("User not found.");
+  res.send(user.firstName + " " + user.lastName + " was deleted.");
+});
 
 module.exports = router;

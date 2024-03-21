@@ -1,0 +1,74 @@
+#loginContainer {
+  background-image: url("/public/images/brushedSteel.png");
+  padding: 15px;
+  min-height: 65vh;
+}
+
+#loginContainer h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+#loginContainer form {
+  width: 100%;
+  max-width: 450px;
+  padding: 15px;
+  color: white;
+}
+
+#loginContainer form input {
+  margin-bottom: 10px;
+}
+
+#loginContainer form input:focus {
+  background-color: rgb(205, 255, 255);
+  border: 2px solid aqua;
+  color: black;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+#loginContainer form label {
+  text-shadow: 2px 2px 4px #000000;
+}
+
+#loginContainer form button {
+  margin-top: 10px;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  color: white;
+  background-color: rgb(1, 150, 150);
+  border: 1px solid rgb(1, 150, 150);
+  border-radius: 5px;
+  text-shadow: 2px 2px 4px #000000;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+#loginContainer form button:hover {
+  background-color: rgb(0, 219, 219);
+  color: white;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+#loginContainer a {
+  color: white;
+  background-color: rgb(1, 150, 150);
+  text-shadow: 2px 2px 4px #000000;
+  padding: 5px 10px;
+  border: 1px solid rgb(1, 150, 150);
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+#loginContainer a:hover {
+  background-color: rgb(0, 219, 219);
+  color: white;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+#loginContainer p {
+  margin-top: 25px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}

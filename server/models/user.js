@@ -29,36 +29,6 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     maxlength: 255,
   },
-  phone: {
-    type: String,
-    required: false,
-    match: /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/,
-  },
-  street: {
-    type: String,
-    required: false,
-    maxlength: 255,
-  },
-  unit: {
-    type: String,
-    required: false,
-    maxlength: 10,
-  },
-  city: {
-    type: String,
-    required: false,
-    maxlength: 50,
-  },
-  state: {
-    type: String,
-    required: false,
-    maxlength: 2,
-  },
-  zip: {
-    type: String,
-    required: false,
-    maxlength: 10,
-  },
   isAdmin: Boolean,
 });
 
@@ -82,12 +52,6 @@ const schema = Joi.object({
   lastName: Joi.string().min(2).max(50).required(),
   email: Joi.string().min(5).max(255).required().email(),
   password: Joi.string().min(5).max(255).required(),
-  phone: Joi.string().pattern(new RegExp("^[0-9]{3}-[0-9]{3}-[0-9]{4}$")),
-  street: Joi.string().max(255),
-  unit: Joi.string().max(10),
-  city: Joi.string().max(50),
-  state: Joi.string().max(2),
-  zip: Joi.string().max(10),
   isAdmin: Joi.boolean(),
 });
 
