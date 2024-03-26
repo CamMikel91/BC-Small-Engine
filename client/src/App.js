@@ -10,11 +10,14 @@ import Logout from "./components/logout";
 import Register from "./components/register";
 import Footer from "./components/footer";
 import { getServices } from "./services/servicesService";
+import { getCoupons, getActiveCoupon } from "./services/couponService";
 import "./app.css";
 
 class App extends Component {
   state = {
     services: [],
+    coupons: [],
+    activeCoupon: {},
     machineTypes: [],
     activeMachineType: "Mower",
   };
@@ -32,6 +35,13 @@ class App extends Component {
     } catch (ex) {
       console.log(ex);
     }
+    try {
+      const coupons = await getCoupons();
+      const activeCoupon = getActiveCoupon(coupons);
+      this.setState({ coupons, activeCoupon });
+    } catch (ex) {
+      console.log(ex);
+    }
   }
 
   getMachineTypes = (services) => {
@@ -46,7 +56,8 @@ class App extends Component {
   };
 
   render() {
-    const { machineTypes, activeMachineType, services, user } = this.state;
+    const { machineTypes, activeMachineType, services, activeCoupon, user } =
+      this.state;
     return (
       <>
         <header>
@@ -65,6 +76,7 @@ class App extends Component {
                   machineTypes={machineTypes}
                   setActiveMachineType={this.handleActiveMachineType}
                   user={user}
+                  activeCoupon={activeCoupon}
                 />
               }
             />

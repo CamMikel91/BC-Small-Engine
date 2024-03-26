@@ -73,7 +73,7 @@ ul.dropdown-menu.show {
   box-shadow: 3px 2px 5px 2px #888888;
   min-width: 300px;
   max-width: 600px;
-  margin: 30px 15px;
+  margin: 20px 15px !important;
 }
 
 .serviceCardHeader {
@@ -132,17 +132,68 @@ ul.dropdown-menu.show {
   text-align: left;
 }
 
+/* Media Queries */
+
+@media (width > 1000px) {
+  #servicesLogo {
+    height: 17%;
+    width: 17%;
+  }
+
+  #servicesBanner {
+    min-height: 30vh;
+  }
+
+  #servicesContainer {
+    padding: 50px 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  #servicesLogo {
+    height: 50%;
+    width: 50%;
+  }
+
+  #servicesBanner {
+    min-height: 40vh;
+  }
+
+  #servicesContainer {
+    padding: 25px 15px;
+  }
+}
+
 @media (max-width: 768px) {
   #servicesLogo {
-    height: 80%;
-    width: 80%;
+    height: 50%;
+    width: 50%;
+  }
+
+  #servicesBanner {
+    min-height: 30vh;
   }
 
   #servicesContainer {
     padding: 25px 10px;
   }
+}
+
+@media (max-width: 576px) {
+  #servicesLogo {
+    height: 75%;
+    width: 75%;
+  }
+
+  #servicesBanner {
+    min-height: 20vh;
+  }
+
+  #servicesContainer {
+    padding: 15px 5px;
+  }
 
   .serviceCard {
-    margin: 15px 0;
+    margin: 20px 5px !important;
   }
 }

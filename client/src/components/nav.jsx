@@ -89,9 +89,7 @@ class Nav extends Component {
               <li className="nav-item">
                 <Link to={"/logout"} className="nav-link" onClick={collapseNav}>
                   Logout{" "}
-                  <span className="badge bg-secondary">
-                    {user.firstName.toUpperCase()}
-                  </span>
+                  <span className="badge bg-secondary">{user.firstName}</span>
                 </Link>
               </li>
             )}

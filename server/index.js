@@ -6,6 +6,7 @@ const port = config.get("port");
 const db = config.get("db");
 const users = require("./routes/users");
 const services = require("./routes/services");
+const coupons = require("./routes/coupons");
 
 // Check for environment variables
 if (!config.get("jwtPrivateKey")) {
@@ -19,6 +20,7 @@ app.use(express.json());
 // Routes
 app.use("/users", users);
 app.use("/services", services);
+app.use("/coupons", coupons);
 
 // Connect to MongoDB
 mongoose

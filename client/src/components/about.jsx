@@ -20,7 +20,7 @@ const About = () => {
           </section>
         </div>
         <div className="row my-5">
-          <div className="col-sm-12 col-md-6 d-flex flex-row">
+          <div className="col-sm-12 col-md-6 d-flex flex-row mb-3">
             <div className="card aboutCard mx-auto">
               <div className="card-header aboutCardHeader">Who We Are</div>
               <div className="card-body">

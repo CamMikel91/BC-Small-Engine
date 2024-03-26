@@ -20,7 +20,7 @@ class Services extends Component {
               <h1>{activeMachineType} Services</h1>
             </div>
             <div className="card-body">
-              <label htmlFor="servicesDropdown">
+              <label className="mb-3" htmlFor="servicesDropdown">
                 Select your machine type to see available services:
               </label>
               <div className="dropdown">

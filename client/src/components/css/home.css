@@ -40,13 +40,24 @@
 
 .homeCards {
   box-shadow: 2px 2px 7px #383838 !important;
-  max-width: 600px;
-  margin: auto;
-  padding: 10px;
+  background-color: transparent;
+}
+
+.homeCards .card-header {
+  background-image: linear-gradient(to top, #ff8c00, #ff4500);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.homeCards .card-body {
+  background-color: transparent;
+  padding: 25px;
 }
 
 .homeCards .card-body button {
-  background-color: rgb(1, 150, 150);
+  background-color: rgb(1, 150, 150) !important;
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -58,9 +69,11 @@
   text-align: center;
 }
 
-#partsIcon {
-  height: 200px;
-  width: 200px;
+#partsIcon,
+#servicesIcon,
+#couponIcon {
+  height: 250px;
+  width: 250px;
   display: block;
   margin: auto;
 }
@@ -72,44 +85,94 @@
   text-align: center;
 }
 
-#servicesIcon {
-  height: 200px;
-  width: 200px;
-  display: block;
-  margin: auto;
-}
-
 #servicesDropdown {
   background-color: rgb(53, 189, 175);
   color: white;
-  margin-top: 15px;
-  padding: 15px;
+  font-size: 20px;
+  padding: 15px 20px;
   box-shadow: 2px 2px 5px #3b3b3b;
 }
 
 #servicesDropdown:hover {
-  background-color: turquoise;
+  background-color: turquoise !important;
+}
+
+/* Coupon Section */
+
+#couponTitle {
+  color: orange;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#couponNote {
+  color: grey;
+  font-size: 12px;
+}
+
+#loggedOutCouponBody {
+  text-align: center;
+}
+
+#loggedOutCouponBody .btn {
+  background-color: rgb(1, 150, 150) !important;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 65px;
+  box-shadow: 2px 2px 5px #3b3b3b;
+}
+
+#loggedOutCouponBody .btn:hover {
+  background-color: turquoise !important;
 }
 
 /* Media Queries */
 
-@media (width >= 1000px) {
+/* @media (max-width: 1000px) {
+  #homeLogo {
+    height: 50%;
+    width: 50%;
+  }
+
+  .homeCards {
+    margin: auto;
+  }
+
+  .banner {
+    min-height: 40vh;
+  }
+} */
+
+@media (max-width: 992px) {
+  #homeLogo {
+    height: 50%;
+    width: 50%;
+  }
+
+  .banner {
+    min-height: 40vh;
+  }
 }
 
 @media (max-width: 768px) {
   #homeLogo {
-    height: 80%;
-    width: 80%;
+    height: 70%;
+    width: 70%;
   }
 
-  .card {
-    border: none;
-    box-shadow: none;
-    background-color: white;
-    margin-bottom: 15px;
+  .banner {
+    min-height: 30vh;
   }
 
-  #parts {
-    margin-top: 45px;
+  .homeCards {
+    margin: auto;
+  }
+
+  #bannerMotto {
+    font-size: 30px;
   }
 }

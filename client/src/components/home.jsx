@@ -4,7 +4,8 @@ import "./css/home.css";
 
 class Home extends Component {
   render() {
-    const { machineTypes, setActiveMachineType } = this.props;
+    const { machineTypes, setActiveMachineType, activeCoupon, user } =
+      this.props;
     return (
       <>
         <section id="homeBanner" className="banner">
@@ -22,7 +23,8 @@ class Home extends Component {
             className="container-fluid  justify-content-around d-flex"
           >
             <div className="row py-5">
-              <div id="services" className="col-md-6 col-sm-12">
+              {/* Services Section */}
+              <div id="services" className="col-lg-4 col-md-6 col-sm-12 mb-5">
                 <div className="homeCards card h-100">
                   <img
                     id="servicesIcon"
@@ -30,8 +32,10 @@ class Home extends Component {
                     className="card-img-top"
                     alt="Services"
                   />
-                  <div className="card-body">
+                  <div className="card-header">
                     <h5 className="card-title">Services</h5>
+                  </div>
+                  <div className="card-body">
                     <p className="card-text">
                       As a certified service center for many of the top brands,
                       we provide a complete range of services for all of your
@@ -70,7 +74,51 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <div id="parts" className="col-md-6 col-sm-12">
+              {/* Coupon Section */}
+              <div id="couponCard" className="col-lg-4 col-md-6 col-sm-12 mb-5">
+                <div className="homeCards card h-100">
+                  <img
+                    id="couponIcon"
+                    src="/images/couponIcon_01.png"
+                    className="card-img-top"
+                    alt="CouponIcon"
+                  />
+                  <div className="card-header">
+                    <h5 className="card-title">Deal of the Month</h5>
+                  </div>
+
+                  {!user && (
+                    <div id="loggedOutCouponBody" className="card-body">
+                      <h6 id="couponTitle" className="card-text">
+                        Sign in to see this month's deal! Registration is fast
+                        and free!
+                      </h6>
+                      <Link to="/login" className="btn">
+                        Login
+                      </Link>
+                    </div>
+                  )}
+
+                  {user && (
+                    <div className="card-body">
+                      <h6 id="couponTitle" className="card-text">
+                        {activeCoupon && activeCoupon.title}
+                      </h6>
+                      <p id="couponDescription" className="card-text">
+                        {activeCoupon && activeCoupon.description}
+                      </p>
+                      <p id="couponInstructions">
+                        {activeCoupon && activeCoupon.instructions}
+                      </p>
+                      <p id="couponNote" className="card-text">
+                        *{activeCoupon && activeCoupon.note}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+              {/* Parts Section */}
+              <div id="parts" className="col-sm-12 col-lg-4 mb-5">
                 <div className="homeCards card h-100">
                   <img
                     id="partsIcon"
@@ -78,16 +126,14 @@ class Home extends Component {
                     className="card-img-top"
                     alt="Parts"
                   />
-                  <div className="card-body">
+
+                  <div className="card-header">
                     <h5 className="card-title">Parts</h5>
+                  </div>
+                  <div className="card-body">
                     <p className="card-text">
                       We can help you find the parts you need, so you can get up
                       and running again as soon as possible.
-                    </p>
-                    <p>
-                      Give us a call with your model and serial number, or bring
-                      in your old part and we can help find exactly what you're
-                      looking for.
                     </p>
                     <p className="card-text">
                       We keep a large selection of parts in stock and also have
