@@ -132,21 +132,6 @@
 
 /* Media Queries */
 
-/* @media (max-width: 1000px) {
-  #homeLogo {
-    height: 50%;
-    width: 50%;
-  }
-
-  .homeCards {
-    margin: auto;
-  }
-
-  .banner {
-    min-height: 40vh;
-  }
-} */
-
 @media (max-width: 992px) {
   #homeLogo {
     height: 50%;
