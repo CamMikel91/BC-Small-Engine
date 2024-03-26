@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const { Service, validateService } = require("../models/service");
+const adminAuth = require("../middleware/adminAuth");
 
 // Create a new service
-router.post("/", async (req, res) => {
+router.post("/", adminAuth, async (req, res) => {
   const { error } = validateService(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -44,7 +45,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Update a service
-router.put("/:id", async (req, res) => {
+router.put("/:id", adminAuth, async (req, res) => {
   const { error } = validateService(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -66,7 +67,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a service
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", adminAuth, async (req, res) => {
   const service = await Service.findByIdAndDelete(req.params.id);
   if (!service) return res.status(404).send("Service not found.");
   res.send(service);

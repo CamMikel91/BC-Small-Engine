@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const { Coupon, validateCoupon } = require("../models/coupon");
+const adminAuth = require("../middleware/adminAuth");
 
 // Create a new coupon
-router.post("/", async (req, res) => {
+router.post("/", adminAuth, async (req, res) => {
   const { error } = validateCoupon(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -44,7 +45,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Update a coupon
-router.put("/:id", async (req, res) => {
+router.put("/:id", adminAuth, async (req, res) => {
   const { error } = validateCoupon(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -66,7 +67,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a coupon
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", adminAuth, async (req, res) => {
   const coupon = await Coupon.findByIdAndRemove(req.params.id);
   if (!coupon) return res.status(404).send("Coupon not found.");
   res.send(coupon);

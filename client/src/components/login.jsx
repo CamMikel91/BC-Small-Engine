@@ -23,7 +23,7 @@ class Login extends Form {
         data.email.toLowerCase(),
         data.password
       );
-      localStorage.setItem("token", jwt);
+      localStorage.setItem("x-auth-token", jwt);
       window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
@@ -51,23 +51,6 @@ class Login extends Form {
           Register
         </Link>
       </div>
-
-      // <div id="loginContainer" className="container-fluid">
-      //   <h1 className="text-center">Login</h1>
-      //   <div className="container">
-      //     <form id="loginForm" onSubmit={this.handleSubmit}>
-      //       {this.renderInput("email", "Email", "email")}
-      //       {this.renderInput("password", "Password", "password")}
-      //       {this.renderButton("Login")}
-      //     </form>
-      //     <div className="mt-3">
-      // <p>Don't have an account?</p>
-      // <Link name={"registerLink"} to={"/register"}>
-      //   Register
-      // </Link>
-      //     </div>
-      //   </div>
-      // </div>
     );
   }
 }
